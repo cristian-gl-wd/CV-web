@@ -7,10 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class TranslationService {
   constructor(private translate: TranslateService) {
     this.translate.addLangs(['en', 'es']);
-    this.translate.setDefaultLang('es');
-
-    const browserLang = this.translate.getBrowserLang() ?? 'es';
-    this.translate.use(browserLang.match(/en|es/) ? browserLang : 'es');
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
   }
 
   changeLanguage(lang: string) {
@@ -18,6 +16,6 @@ export class TranslationService {
   }
 
   getCurrentLang(): string {
-    return this.translate.currentLang ?? this.translate.defaultLang ?? 'es';
+    return this.translate.currentLang ?? this.translate.defaultLang ?? 'en';
   }
 }

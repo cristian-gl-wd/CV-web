@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslationService } from './services/translation.service';
@@ -7,26 +7,26 @@ import { TranslationService } from './services/translation.service';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  templateUrl: './app.html',
-  styleUrls: ['./app.scss']
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements AfterViewInit {
+  @ViewChild('mainContent') mainContentEl!: ElementRef;
 
-  @ViewChildren('fadeInSection', { read: ElementRef }) sections!: QueryList<ElementRef>;
-  
   isDarkMode = false;
   currentLang = '';
+  activeSection = '';
 
   personalInfo = {
     linkedin: 'linkedin.com/in/cristian-gl-wd',
-    github: 'github.com/cristian-gl-wd'
+    github: 'github.com/cristian-gl-wd',
   };
 
   skills = {
     languages: ['TypeScript', 'JavaScript', 'C++', 'C#'],
     frontend: ['Angular', 'RxJS', 'NgRx', 'SCSS', 'HTML'],
     backend: ['Node.js', 'MySQL'],
-    tools: ['Git', 'Jira', 'Docker']
+    tools: ['Git', 'Jira', 'Docker'],
   };
 
   constructor(private translationService: TranslationService) {
@@ -34,16 +34,21 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            this.activeSection = entry.target.id;
+          }
+        });
+      },
+      {
+        root: this.mainContentEl.nativeElement,
+        threshold: 0.5,
+      }
+    );
 
-    document.querySelectorAll('.fade-in-section').forEach(section => {
+    document.querySelectorAll('section[id]').forEach((section) => {
       observer.observe(section);
     });
   }
@@ -55,5 +60,13 @@ export class AppComponent implements AfterViewInit {
 
   toggleTheme(): void {
     this.isDarkMode = !this.isDarkMode;
+  }
+
+  scrollToSection(sectionId: string): void {
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
   }
 }
