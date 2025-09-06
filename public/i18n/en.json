@@ -1,0 +1,71 @@
+{
+  "header": {
+    "name": "Cristian García López",
+    "title": "Frontend Developer"
+  },
+  "contact": {
+    "email": "cristian.gl.wd@gmail.com",
+    "phone": "+34 692439717",
+    "linkedin": "LinkedIn profile",
+    "github": "GitHub profile"
+  },
+  "profile": {
+    "title": "Profile",
+    "summary": "Software Engineer with over 6 years of experience in the technology sector, passionate about building intuitive and efficient user interfaces. Specialized for the last 3+ years in the Angular ecosystem, transforming complex requirements into robust and scalable web applications. Actively seeking a challenging role in an international environment. My previous experience with C++ and C# has provided me with a solid foundation in software engineering principles and optimization."
+  },
+  "experience": {
+    "title": "Professional experience",
+    "jobs": [
+      {
+        "title": "Frontend developer",
+        "company": "Grupo Alonso",
+        "period": "09/2021 - present",
+        "description": "Development and maintenance of user-centric web applications with Angular for the logistics sector, focusing on scalability and performance.",
+        "achievements": [
+          "Architected a modular SCSS style library adopted in over 5 projects, reducing UI development time by 20%.",
+          "Engineered a complex drag-and-drop feature for a key logistics application.",
+          "Optimized application performance by strategically using browser local storage for client-side data persistence."
+        ]
+      },
+      {
+        "title": "Software developer",
+        "company": "Grupo Alonso",
+        "period": "06/2019 - 08/2021",
+        "description": "Engineered and maintained critical backend solutions in C++ and developed desktop applications in C# to optimize internal business processes.",
+        "achievements": [
+          "Built a data synchronization module in C++ to connect a legacy system with a modern SQL Server database.",
+          "Developed a C# desktop application for the finance department to manage accounting and comply with new tax regulations."
+        ]
+      },
+      {
+        "title": "Web developer",
+        "company": "My Energy Map",
+        "period": "03/2016 - 09/2017",
+        "description": "Led a complete technical overhaul of the company's main web application, refactoring legacy PHP code to a modern stack (JavaScript, HTML5, CSS3) and significantly improving load times and user experience."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Technical skills",
+    "languages": "Languages",
+    "frontend": "Frontend",
+    "backend": "Backend & databases",
+    "tools": "Tools & development"
+  },
+  "education": {
+    "title": "Education",
+    "degrees": [
+      {
+        "title": "Higher National Diploma in Web Application Development",
+        "institution": "IES Conselleria",
+        "period": "2015 - 2017"
+      },
+      {
+        "title": "Higher National Diploma in Microcomputer Systems and Networks",
+        "institution": "IES La Senia",
+        "period": "2013 - 2015",
+        "note": "Includes a 6-month international internship in Tallinn, Estonia (Erasmus+ Programme)."
+      }
+    ]
+  }
+}

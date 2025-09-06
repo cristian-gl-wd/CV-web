@@ -1,0 +1,21 @@
+$accent-color: #50C878;
+
+:root {
+  --primary-bg-color: #f8f9fa;
+  --secondary-bg-color: #ffffff;
+  --primary-text-color: #212529;
+  --secondary-text-color: #495057;
+  --accent-color: #{$accent-color};
+  --border-color: #dee2e6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme {
+  --primary-bg-color: #121212;
+  --secondary-bg-color: #1a1a1a;
+  --primary-text-color: #e9ecef;
+  --secondary-text-color: #adb5bd;
+  --accent-color: #{$accent-color};
+  --border-color: #343a40;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
