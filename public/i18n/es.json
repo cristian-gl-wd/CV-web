@@ -1,72 +1,101 @@
 {
-  "header": {
-    "name": "Cristian García López",
-    "title": "Desarrollador frontend"
-  },
-  "contact": {
-    "title": "Contacto",
-    "email": "cristian.gl.wd@gmail.com",
-    "phone": "+34 692439717",
-    "linkedin": "Perfil de LinkedIn",
-    "github": "Perfil de GitHub"
-  },
-  "profile": {
-    "title": "Perfil",
-    "summary": "Ingeniero de Software con más de 6 años de experiencia en el sector tecnológico, apasionado por construir interfaces de usuario intuitivas y eficientes. Especializado durante los últimos 3+ años en el ecosistema Angular, transformando requisitos complejos en aplicaciones web robustas y escalables. Buscando activamente un rol desafiante en un entorno internacional. Mi experiencia previa con C++ y C# me ha proporcionado una sólida base en principios de ingeniería de software y optimización."
-  },
-  "experience": {
-    "title": "Experiencia profesional",
-    "jobs": [
-      {
-        "title": "Frontend developer",
-        "company": "Grupo Alonso",
-        "period": "09/2021 - Presente",
-        "description": "Desarrollo y mantenimiento de aplicaciones web centradas en el usuario con Angular para el sector logístico, con foco en escalabilidad y rendimiento.",
-        "achievements": [
-          "Arquitectura de una librería modular de estilos SCSS adoptada en más de 5 proyectos, reduciendo el tiempo de desarrollo de UI en un 20%.",
-          "Ingeniería de una compleja funcionalidad de arrastrar y soltar (drag-and-drop) para una aplicación logística clave.",
-          "Optimización del rendimiento de la aplicación mediante el uso estratégico del almacenamiento local del navegador para la persistencia de datos del lado del cliente."
-        ]
-      },
-      {
-        "title": "Software developer",
-        "company": "Grupo Alonso",
-        "period": "06/2019 - 08/2021",
-        "description": "Ingeniería y mantenimiento de soluciones backend críticas en C++ y desarrollo de aplicaciones de escritorio en C# para optimizar procesos de negocio internos.",
-        "achievements": [
-          "Construcción de un módulo de sincronización de datos en C++ para conectar un sistema heredado con una base de datos SQL Server moderna.",
-          "Desarrollo de una aplicación de escritorio en C# para el departamento financiero para gestionar la contabilidad y cumplir con nuevas regulaciones fiscales."
-        ]
-      },
-      {
-        "title": "Web developer",
-        "company": "My Energy Map",
-        "period": "03/2016 - 09/2017",
-        "description": "Revisión técnica completa de la aplicación web principal de la empresa, refactorizando el código PHP heredado a un stack moderno (JavaScript, HTML5, CSS3) y mejorando significativamente los tiempos de carga y la experiencia de usuario."
+  "location": {
+    "spain": {
+      "name": "España",
+      "city": {
+        "valencia": {
+          "name": "Valencia"
+        }
       }
-    ]
+    }
   },
-  "skills": {
-    "title": "Habilidades Técnicas",
-    "languages": "Lenguajes",
-    "frontend": "Frontend",
-    "backend": "Backend & Bases de Datos",
-    "tools": "Herramientas & Desarrollo"
+  "person": {
+    "cristian-gl-wd": {
+      "job_title": "Desarrollador frontend",
+      "summary": "Ingeniero de software con más de 6 años de experiencia, apasionado por construir interfaces de usuario intuitivas y eficientes. Durante los últimos 3+ años, me he especializado en el ecosistema Angular, transformando requisitos complejos en aplicaciones web robustas y escalables. Busco activamente un rol desafiante en un entorno internacional. Mi experiencia con C++ y C# me ha proporcionado una sólida base en principios de ingeniería de software y optimización."
+    }
   },
-  "education": {
-    "title": "Educación",
-    "degrees": [
-      {
-        "title": "Grado Superior en Desarrollo de Aplicaciones Web",
-        "institution": "IES Conselleria",
-        "period": "2015 - 2017"
-      },
-      {
-        "title": "Grado Superior en Sistemas Microinformáticos y Redes",
-        "institution": "IES La Senia",
-        "period": "2013 - 2015",
-        "note": "Incluye una estancia de 6 meses de prácticas internacionales en Tallin, Estonia (Programa Erasmus+)."
+  "company": {
+    "grupo_alonso": {
+      "name": "Grupo Alonso",
+      "description": "Grupo Alonso es un holding multisectorial global con enfoque en logística, energía e infraestructura. Con más de 60 años de experiencia, es un líder en el sector del transporte, ofreciendo soluciones eficientes y sostenibles en todo el mundo. Mi rol se centró en la modernización de sus plataformas de transporte y logística, clave para sus operaciones internacionales."
+    },
+    "my_energy_map": {
+      "name": "My Energy Map",
+      "description": "My Energy Map es una plataforma innovadora que permite a los usuarios visualizar y analizar datos energéticos a nivel global. La plataforma integra diversas fuentes de datos para ofrecer insights sobre el consumo y la producción de energía, facilitando la toma de decisiones informadas en el ámbito energético."
+    }
+  },
+  "academic_center": {
+    "conselleria": {
+      "name": "Conselleria",
+      "study": {
+        "daw": {
+          "name": "Grado Superior en Desarrollo de Aplicaciones Web"
+        }
       }
-    ]
+    },
+    "la_senia": {
+      "name": "La Sénia",
+      "study": {
+        "smr": {
+          "name": "Grado Medio en Sistemas Microinformáticos y Redes",
+          "erasmus": "Incluye una estancia internacional de 6 meses en Tallin, Estonia (Programa Erasmus+)."
+        }
+      }
+    }
+  },
+  "job": {
+    "frontend_developer": {
+      "title": "Desarrollador frontend",
+      "description": "Construcción y mantenimiento de aplicaciones Angular centradas en el usuario para el sector logístico, con foco en la escalabilidad y el rendimiento."
+    },
+    "software_developer": {
+      "title": "Desarrollador de software",
+      "description": "Diseño y mantenimiento de soluciones backend críticas en C++ y desarrollo de aplicaciones de escritorio en C# para optimizar los procesos internos del negocio."
+    },
+    "web_developer": {
+      "title": "Desarrollador web",
+      "description": "Lideré la renovación técnica completa de la aplicación web principal de la empresa, refactorizando PHP heredado a una pila moderna (JavaScript, HTML5, CSS3), mejorando significativamente los tiempos de carga y la experiencia del usuario."
+    }
+  },
+  "skill_levels": {
+    "advanced": "Avanzado",
+    "proficient": "Competente",
+    "intermediate": "Intermedio"
+  },
+  "web_content": {
+    "section": {
+      "profile": {
+        "title": "Sobre mí"
+      },
+      "projects": {
+        "title": "Proyectos"
+      },
+      "education": {
+        "title": "Educación"
+      },
+      "skills": {
+        "title": "Habilidades"
+      },
+      "experience": {
+        "title": "Experiencia"
+      }
+    },
+    "buttons": {
+      "download_cv": {
+        "label": "Descargar CV"
+      },
+      "repository": {
+        "label": "Repositorio"
+      },
+      "demo": {
+        "label": "Demo"
+      }
+    }
+  },
+  "common": {
+    "time": {
+      "present": "Presente"
+    }
   }
 }

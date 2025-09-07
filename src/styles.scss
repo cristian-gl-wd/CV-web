@@ -1,6 +1,9 @@
-@use './theme.scss' as *;
-
-* {
+// ----------------------------------------
+// Resets and basic setup
+// ----------------------------------------
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -8,45 +11,99 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--primary-bg-color);
-  color: var(--primary-text-color);
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  overflow-x: hidden;
 }
 
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: color 0.3s ease;
+}
 
-  &:hover {
-    opacity: 0.8;
+h1, h2, h3 {
+  color: var(--text-headings);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+// ----------------------------------------
+// Layout Structure
+// ----------------------------------------
+.main-container {
+  display: grid;
+  // Two-column layout for desktop
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 33vw;
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-right: 1px solid var(--border-color);
+  transition: border-color 0.3s ease;
+}
+
+.main-content {
+  grid-column: 2 / 3;
+}
+
+// ----------------------------------------
+// Responsive design
+// ----------------------------------------
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    border-right: none;
+    padding: 2rem 1rem;
+  }
+
+  .main-content {
+    grid-column: 1 / 2;
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+// ----------------------------------------
+// Utility Classes
+// ----------------------------------------
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.fade-in-section {
-  animation: fadeIn 0.8s ease-out forwards;
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-
-
-@import './print.scss';

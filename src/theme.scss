@@ -1,21 +1,28 @@
-$accent-color: #50C878;
-
 :root {
-  --primary-bg-color: #f8f9fa;
-  --secondary-bg-color: #ffffff;
-  --primary-text-color: #212529;
-  --secondary-text-color: #495057;
-  --accent-color: #{$accent-color};
-  --border-color: #dee2e6;
+  --accent-color: #10b981;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-headings: #111827;
+  --border-color: #e5e7eb;
   --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
-.dark-theme {
-  --primary-bg-color: #121212;
-  --secondary-bg-color: #1a1a1a;
-  --primary-text-color: #e9ecef;
-  --secondary-text-color: #adb5bd;
-  --accent-color: #{$accent-color};
-  --border-color: #343a40;
-  --shadow-color: rgba(0, 0, 0, 0.4);
+[data-theme="dark"] {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #d1d5db;
+  --text-secondary: #9ca3af;
+  --text-headings: #f9fafb;
+  --border-color: #374151;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+[data-accent="blue"] {
+  --accent-color: #3b82f6;
+}
+
+[data-accent="purple"] {
+  --accent-color: #8b5cf6;
 }
