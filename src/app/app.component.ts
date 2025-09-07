@@ -1,6 +1,6 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslationService } from './services/translation.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { TranslationService } from './services/translation.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnInit {
   @ViewChild('mainContent') mainContentEl!: ElementRef;
 
   isDarkMode = false;
@@ -29,7 +29,9 @@ export class AppComponent implements AfterViewInit {
     tools: ['Git', 'Jira', 'Docker'],
   };
 
-  constructor(private translationService: TranslationService) {
+  constructor(private translationService: TranslationService) {}
+
+  ngOnInit(): void {
     this.currentLang = this.translationService.getCurrentLang();
   }
 
@@ -55,7 +57,7 @@ export class AppComponent implements AfterViewInit {
 
   changeLang(lang: string): void {
     this.translationService.changeLanguage(lang);
-    this.currentLang = lang;
+    this.currentLang = this.translationService.getCurrentLang();
   }
 
   toggleTheme(): void {
