@@ -3,9 +3,8 @@
   <aside class="sidebar">
     <div class="sidebar-content">
       <img src="images/me.png" alt="Profile picture" class="profile-picture" />
-      <h1>{{person.name}}</h1>
-      <h2>{{person.surname}}</h2>
-      <h3>{{ t(`person.${person.personKey}.job_title`)  }}</h3>
+      <h1>{{person.name}} {{person.surname}}</h1>
+      <h2>{{ t(`person.${person.personKey}.job_title`)  }}</h2>
 
       <button class="download-cv-btn" (click)="downloadCV()">
         {{ t('web_content.buttons.download_cv.label') }}
@@ -88,7 +87,7 @@
         <li>
           <a
             href="#profile"
-            [attr.data-tooltip]="t('nav.profile')"
+            [attr.data-tooltip]="t('web_content.section.profile.title')"
             [class.active]="activeSection() === 'profile'"
           >
           </a>
@@ -96,7 +95,7 @@
         <li>
           <a
             href="#experience"
-            [attr.data-tooltip]="t('nav.experience')"
+            [attr.data-tooltip]="t('web_content.section.experience.title')"
             [class.active]="activeSection() === 'experience'"
           >
           </a>
@@ -104,7 +103,7 @@
         <li>
           <a
             href="#skills"
-            [attr.data-tooltip]="t('nav.skills')"
+            [attr.data-tooltip]="t('web_content.section.skills.title')"
             [class.active]="activeSection() === 'skills'"
           >
           </a>
@@ -112,7 +111,7 @@
         <li>
           <a
             href="#projects"
-            [attr.data-tooltip]="t('nav.projects')"
+            [attr.data-tooltip]="t('web_content.section.projects.title')"
             [class.active]="activeSection() === 'projects'"
           >
           </a>
@@ -120,7 +119,7 @@
         <li>
           <a
             href="#education"
-            [attr.data-tooltip]="t('nav.education')"
+            [attr.data-tooltip]="t('web_content.section.education.title')"
             [class.active]="activeSection() === 'education'"
           >
           </a>
