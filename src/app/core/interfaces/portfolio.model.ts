@@ -57,6 +57,7 @@ export interface Person {
   surname: string;
   personKey: string;
   profilePictureUrl: string;
+  cvUrl: string;
   experience: Company[];
   education: EducationCenter[];
   projects: Project[];

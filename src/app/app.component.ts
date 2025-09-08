@@ -40,7 +40,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     public themeService: ThemeService,
     private cvDataService: CvDataService,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.cvDataService.getPersonData().subscribe((data) => {
@@ -88,10 +88,6 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   changeLanguage(lang: string): void {
     this.translationService.setLanguage(lang);
-  }
-
-  downloadCV(): void {
-    window.print();
   }
 
   t(key: string): string {

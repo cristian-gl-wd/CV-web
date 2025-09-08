@@ -2,54 +2,60 @@
 <div class="main-container">
   <aside class="sidebar">
     <div class="sidebar-content">
-      <img src="images/me.png" alt="Profile picture" class="profile-picture" />
-      <h1>{{person.name}} {{person.surname}}</h1>
-      <h2>{{ t(`person.${person.personKey}.job_title`)  }}</h2>
+      <img [src]="`images/${person.profilePictureUrl}.png`"
+        alt="Profile picture"
+        class="profile-picture" />
+      <h1>{{ person.name }} {{ person.surname }}</h1>
+      <h2>{{ t(`person.${person.personKey}.job_title`) }}</h2>
 
-      <button class="download-cv-btn" (click)="downloadCV()">
+      <a [href]="`docs/pdf/${person.cvUrl}.pdf`"
+        [download]="`${person.cvUrl}.pdf`"
+        class="download-cv-btn">
         {{ t('web_content.buttons.download_cv.label') }}
-      </button>
+      </a>
 
       <nav class="main-nav">
         <ul>
           <li>
-            <a href="#profile" [class.active]="activeSection() === 'profile'">{{
+            <a href="#profile"
+              [class.active]="activeSection() === 'profile'">{{
               t('web_content.section.profile.title')
-            }}</a>
+              }}</a>
           </li>
           <li>
-            <a href="#experience" [class.active]="activeSection() === 'experience'">{{
+            <a href="#experience"
+              [class.active]="activeSection() === 'experience'">{{
               t('web_content.section.experience.title')
-            }}</a>
+              }}</a>
           </li>
           <li>
-            <a href="#skills" [class.active]="activeSection() === 'skills'">{{
+            <a href="#skills"
+              [class.active]="activeSection() === 'skills'">{{
               t('web_content.section.skills.title')
-            }}</a>
+              }}</a>
           </li>
           <li>
-            <a href="#projects" [class.active]="activeSection() === 'projects'">{{
+            <a href="#projects"
+              [class.active]="activeSection() === 'projects'">{{
               t('web_content.section.projects.title')
-            }}</a>
+              }}</a>
           </li>
           <li>
-            <a href="#education" [class.active]="activeSection() === 'education'">{{
+            <a href="#education"
+              [class.active]="activeSection() === 'education'">{{
               t('web_content.section.education.title')
-            }}</a>
+              }}</a>
           </li>
         </ul>
       </nav>
 
       <div class="social-links">
-        <a
-          href="https://linkedin.com/in/{{ person.personKey }}"
+        <a href="https://linkedin.com/in/{{ person.personKey }}"
           target="_blank"
-          rel="noopener noreferrer"
-          >LinkedIn</a
-        >
-        <a href="https://github.com/{{ person.personKey }}" target="_blank" rel="noopener noreferrer"
-          >GitHub</a
-        >
+          rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/{{ person.personKey }}"
+          target="_blank"
+          rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
   </aside>
@@ -57,17 +63,16 @@
   <main class="main-content">
     <div class="ui-controls">
       <div class="language-switcher">
-        <a (click)="changeLanguage('es')" [class.active]="translationService.currentLang() === 'es'"
-          >es</a
-        >
+        <a (click)="changeLanguage('es')"
+          [class.active]="translationService.currentLang() === 'es'">es</a>
         <span>|</span>
-        <a (click)="changeLanguage('en')" [class.active]="translationService.currentLang() === 'en'"
-          >en</a
-        >
+        <a (click)="changeLanguage('en')"
+          [class.active]="translationService.currentLang() === 'en'">en</a>
       </div>
 
       <div class="theme-switcher">
-        <button (click)="themeService.toggleTheme()" [title]="t('buttons.toggle_theme')">
+        <button (click)="themeService.toggleTheme()"
+          [title]="t('buttons.toggle_theme')">
           @if (themeService.theme() === 'light') {
           <span><i class="fa-solid fa-moon"></i></span>
           } @else {
@@ -75,9 +80,12 @@
           }
         </button>
         <div class="accent-picker">
-          <span class="color-dot emerald" (click)="themeService.setAccent('emerald')"></span>
-          <span class="color-dot blue" (click)="themeService.setAccent('blue')"></span>
-          <span class="color-dot purple" (click)="themeService.setAccent('purple')"></span>
+          <span class="color-dot emerald"
+            (click)="themeService.setAccent('emerald')"></span>
+          <span class="color-dot blue"
+            (click)="themeService.setAccent('blue')"></span>
+          <span class="color-dot purple"
+            (click)="themeService.setAccent('purple')"></span>
         </div>
       </div>
     </div>
@@ -85,71 +93,68 @@
     <nav class="side-dots-nav">
       <ul>
         <li>
-          <a
-            href="#profile"
+          <a href="#profile"
             [attr.data-tooltip]="t('web_content.section.profile.title')"
-            [class.active]="activeSection() === 'profile'"
-          >
+            [class.active]="activeSection() === 'profile'">
           </a>
         </li>
         <li>
-          <a
-            href="#experience"
+          <a href="#experience"
             [attr.data-tooltip]="t('web_content.section.experience.title')"
-            [class.active]="activeSection() === 'experience'"
-          >
+            [class.active]="activeSection() === 'experience'">
           </a>
         </li>
         <li>
-          <a
-            href="#skills"
+          <a href="#skills"
             [attr.data-tooltip]="t('web_content.section.skills.title')"
-            [class.active]="activeSection() === 'skills'"
-          >
+            [class.active]="activeSection() === 'skills'">
           </a>
         </li>
         <li>
-          <a
-            href="#projects"
+          <a href="#projects"
             [attr.data-tooltip]="t('web_content.section.projects.title')"
-            [class.active]="activeSection() === 'projects'"
-          >
+            [class.active]="activeSection() === 'projects'">
           </a>
         </li>
         <li>
-          <a
-            href="#education"
+          <a href="#education"
             [attr.data-tooltip]="t('web_content.section.education.title')"
-            [class.active]="activeSection() === 'education'"
-          >
+            [class.active]="activeSection() === 'education'">
           </a>
         </li>
       </ul>
     </nav>
 
-    <section id="profile" #section class="content-section">
+    <section id="profile"
+      #section
+      class="content-section">
       <div class="section-content">
         <h2>{{ t('web_content.section.profile.title') }}</h2>
         <p>{{ t('person.' + person.personKey + '.summary') }}</p>
       </div>
-      <a href="#experience" class="scroll-down-arrow" aria-label="Scroll to next section"></a>
+      <a href="#experience"
+        class="scroll-down-arrow">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
     </section>
 
-    <section id="experience" #section class="content-section">
+    <section id="experience"
+      #section
+      class="content-section">
       <div class="section-content">
         <h2>{{ t('web_content.section.experience.title') }}</h2>
         <div class="timeline">
           @for (company of person.experience; track company.id) { @for (job of company.jobs; track
           job.id) {
-          <div class="timeline-item fade-in" #timelineItem>
+          <div class="timeline-item fade-in"
+            #timelineItem>
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <h3>
                 {{ t('job.' + job.jobKey + '.title') }} |
                 {{ t('company.' + company.companyKey + '.name') }}
               </h3>
-              <span class="timeline-period"
-                >{{ job.period.start | date : 'MMMM yyyy' }} - @if (job.isCurrent) {
+              <span class="timeline-period">{{ job.period.start | date : 'MMMM yyyy' }} - @if (job.isCurrent) {
                 {{ t('common.time.present') }}
                 } @else {
                 {{ job.period.end | date : 'MMMM yyyy' }}
@@ -161,10 +166,15 @@
           } }
         </div>
       </div>
-      <a href="#skills" class="scroll-down-arrow" aria-label="Scroll to next section"></a>
+      <a href="#skills"
+        class="scroll-down-arrow">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
     </section>
 
-    <section id="skills" #section class="content-section">
+    <section id="skills"
+      #section
+      class="content-section">
       <div class="section-content">
         <h2>{{ t('web_content.section.skills.title') }}</h2>
         <div class="skills-grid">
@@ -176,10 +186,15 @@
           }
         </div>
       </div>
-      <a href="#projects" class="scroll-down-arrow" aria-label="Scroll to next section"></a>
+      <a href="#projects"
+        class="scroll-down-arrow">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
     </section>
 
-    <section id="projects" #section class="content-section">
+    <section id="projects"
+      #section
+      class="content-section">
       <div class="section-content">
         <h2>{{ t('web_content.section.projects.title') }}</h2>
         <div class="projects-grid">
@@ -192,23 +207,30 @@
             </div>
             <div class="project-links">
               @if(project.repoUrl) {
-              <a [href]="project.repoUrl" target="_blank">{{
+              <a [href]="project.repoUrl"
+                target="_blank">{{
                 t('web_content.buttons.repository.label')
-              }}</a>
+                }}</a>
               } @if(project.demoUrl) {
-              <a [href]="project.demoUrl" target="_blank">{{
+              <a [href]="project.demoUrl"
+                target="_blank">{{
                 t('web_content.buttons.demo.label')
-              }}</a>
+                }}</a>
               }
             </div>
           </div>
           }
         </div>
       </div>
-      <a href="#education" class="scroll-down-arrow" aria-label="Scroll to next section"></a>
+      <a href="#education"
+        class="scroll-down-arrow">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
     </section>
 
-    <section id="education" #section class="content-section">
+    <section id="education"
+      #section
+      class="content-section">
       <div class="section-content">
         <h2>{{ t('web_content.section.education.title') }}</h2>
         <div class="education-list">
@@ -217,7 +239,7 @@
           <div class="education-item">
             <h3>
               {{
-                t('academic_center.' + center.academyKey + '.study.' + degree.studyKey + '.name')
+              t('academic_center.' + center.academyKey + '.study.' + degree.studyKey + '.name')
               }}
             </h3>
             <p class="institution">
@@ -229,7 +251,7 @@
             '.erasmus') {
             <p class="note">
               {{
-                t('academic_center.' + center.academyKey + '.study.' + degree.studyKey + '.erasmus')
+              t('academic_center.' + center.academyKey + '.study.' + degree.studyKey + '.erasmus')
               }}
             </p>
             }

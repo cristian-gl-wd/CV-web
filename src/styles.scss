@@ -16,8 +16,8 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
 }
@@ -28,74 +28,30 @@ a {
   transition: color 0.3s ease;
 }
 
-h1, h2, h3 {
-  color: var(--text-headings);
+h1,
+h2,
+h3 {
+  color: var(--titles-text-color);
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
-
-// ----------------------------------------
-// Layout Structure
-// ----------------------------------------
-.main-container {
-  display: grid;
-  // Two-column layout for desktop
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
 }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 33vw;
-  height: 100vh;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border-right: 1px solid var(--border-color);
-  transition: border-color 0.3s ease;
-}
-
-.main-content {
-  grid-column: 2 / 3;
+p {
+  line-height: 1.5;
 }
 
 // ----------------------------------------
-// Responsive design
-// ----------------------------------------
-@media (max-width: 768px) {
-  .main-container {
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
-  }
-
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-    border-right: none;
-    padding: 2rem 1rem;
-  }
-
-  .main-content {
-    grid-column: 1 / 2;
-  }
-}
-
-// ----------------------------------------
-// Utility Classes
+// Utility classes
 // ----------------------------------------
 .fade-in {
   opacity: 0;

@@ -5,6 +5,7 @@ export const mockPerson: Person = {
   surname: 'García López',
   personKey: 'cristian-gl-wd',
   profilePictureUrl: 'me',
+  cvUrl: 'CristianGarciaLopez_CV',
   experience: [
     {
       id: 1,
