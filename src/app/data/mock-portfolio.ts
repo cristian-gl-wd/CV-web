@@ -18,11 +18,11 @@ export const mockPerson: Person = {
           location: { countryKey: 'spain', cityKey: 'valencia' },
           period: { start: new Date('2021-09'), end: new Date() },
           skills: [
-            { name: 'Angular', levelKey: 'advanced' },
-            { name: 'TypeScript', levelKey: 'advanced' },
-            { name: 'RxJS', levelKey: 'proficient' },
-            { name: 'Ngrx', levelKey: 'proficient' },
-            { name: 'SCSS', levelKey: 'advanced' },
+            { nameKey: 'angular', iconClass: 'devicon-angularjs-plain' },
+            { nameKey: 'typescript', iconClass: 'devicon-typescript-plain' },
+            { nameKey: 'rxjs', iconClass: 'devicon-rxjs-plain' },
+            { nameKey: 'ngrx', iconClass: 'devicon-redux-original' },
+            { nameKey: 'scss', iconClass: 'devicon-sass-original' },
           ],
         },
         {
@@ -31,9 +31,9 @@ export const mockPerson: Person = {
           location: { countryKey: 'spain', cityKey: 'valencia' },
           period: { start: new Date('2019-06'), end: new Date('2021-08') },
           skills: [
-            { name: 'C++', levelKey: 'proficient' },
-            { name: 'C#', levelKey: 'proficient' },
-            { name: 'MySQL', levelKey: 'intermediate' },
+            { nameKey: 'cplusplus', iconClass: 'devicon-cplusplus-plain' },
+            { nameKey: 'csharp', iconClass: 'devicon-csharp-plain' },
+            { nameKey: 'mysql', iconClass: 'devicon-mysql-plain-wordmark' },
           ],
         },
       ],
@@ -48,9 +48,9 @@ export const mockPerson: Person = {
           location: { countryKey: 'spain', cityKey: 'valencia' },
           period: { start: new Date('2016-03'), end: new Date('2017-09') },
           skills: [
-            { name: 'JavaScript', levelKey: 'proficient' },
-            { name: 'HTML5', levelKey: 'proficient' },
-            { name: 'CSS3', levelKey: 'proficient' },
+            { nameKey: 'javascript', iconClass: 'devicon-javascript-plain' },
+            { nameKey: 'html5', iconClass: 'devicon-html5-plain' },
+            { nameKey: 'css3', iconClass: 'devicon-css3-plain' },
           ],
         },
       ],
@@ -88,25 +88,58 @@ export const mockPerson: Person = {
       name: 'Portfolio Personal',
       description: 'Una web de portfolio personal interactiva construida con Angular para mostrar habilidades y experiencia profesional.',
       techStack: [
-        { name: 'Angular', levelKey: 'advanced' },
-        { name: 'TypeScript', levelKey: 'advanced' },
-        { name: 'SCSS', levelKey: 'advanced' },
+        { nameKey: 'angular', iconClass: 'devicon-angularjs-plain' },
+        { nameKey: 'typescript', iconClass: 'devicon-typescript-plain' },
+        { nameKey: 'scss', iconClass: 'devicon-sass-original' },
       ],
       repoUrl: 'https://github.com/cristian-gl-wd/portfolio-web',
       demoUrl: 'https://cristiangarcia.dev',
     },
   ],
   skills: [
-    { name: 'Angular', levelKey: 'advanced' },
-    { name: 'TypeScript', levelKey: 'advanced' },
-    { name: 'RxJS', levelKey: 'proficient' },
-    { name: 'Ngrx', levelKey: 'proficient' },
-    { name: 'SCSS', levelKey: 'advanced' },
-    { name: 'JavaScript', levelKey: 'proficient' },
-    { name: 'HTML5', levelKey: 'proficient' },
-    { name: 'CSS3', levelKey: 'proficient' },
-    { name: 'C++', levelKey: 'proficient' },
-    { name: 'C#', levelKey: 'proficient' },
-    { name: 'MySQL', levelKey: 'intermediate' },
+    {
+      titleKey: 'languages',
+      skills: [
+        { nameKey: 'typescript', iconClass: 'devicon-typescript-plain' },
+        { nameKey: 'javascript', iconClass: 'devicon-javascript-plain' },
+        { nameKey: 'cplusplus', iconClass: 'devicon-cplusplus-plain' },
+        { nameKey: 'csharp', iconClass: 'devicon-csharp-plain' },
+        { nameKey: 'java', iconClass: 'devicon-java-plain' }
+      ]
+    },
+    {
+      titleKey: 'frontend',
+      skills: [
+        { nameKey: 'angular', iconClass: 'devicon-angularjs-plain' },
+        { nameKey: 'kendoui', iconClass: '' },
+        { nameKey: 'angularmaterial', iconClass: 'devicon-angularjs-plain' },
+        { nameKey: 'bootstrap', iconClass: 'devicon-bootstrap-plain' },
+        { nameKey: 'rxjs', iconClass: 'devicon-rxjs-plain' },
+        { nameKey: 'ngrx', iconClass: 'devicon-redux-original' },
+        { nameKey: 'scss', iconClass: 'devicon-sass-original' },
+        { nameKey: 'html5', iconClass: 'devicon-html5-plain' },
+        { nameKey: 'css3', iconClass: 'devicon-css3-plain' },
+        { nameKey: 'jquery', iconClass: 'devicon-jquery-plain' },
+        { nameKey: 'jest', iconClass: 'devicon-jest-plain' },
+        { nameKey: 'primeng', iconClass: 'devicon-primeng-plain' },
+        { nameKey: 'canva', iconClass: 'devicon-canva-original' }
+      ]
+    },
+    {
+      titleKey: 'databases',
+      skills: [
+        { nameKey: 'mysql', iconClass: 'devicon-mysql-plain-wordmark' },
+        { nameKey: 'sqlserver', iconClass: 'devicon-microsoftsqlserver-plain' }
+      ]
+    },
+    {
+      titleKey: 'tools',
+      skills: [
+        { nameKey: 'git', iconClass: 'devicon-git-plain' },
+        { nameKey: 'jira', iconClass: 'devicon-jira-plain' },
+        { nameKey: 'postman', iconClass: 'devicon-postman-plain' },
+        { nameKey: 'docker', iconClass: 'devicon-docker-plain' }
+      ]
+    }
   ],
 };

@@ -58,11 +58,6 @@
       "description": "Lideré la renovación técnica completa de la aplicación web principal de la empresa, refactorizando PHP heredado a una pila moderna (JavaScript, HTML5, CSS3), mejorando significativamente los tiempos de carga y la experiencia del usuario."
     }
   },
-  "skill_levels": {
-    "advanced": "Avanzado",
-    "proficient": "Competente",
-    "intermediate": "Intermedio"
-  },
   "web_content": {
     "section": {
       "profile": {
@@ -75,7 +70,38 @@
         "title": "Educación"
       },
       "skills": {
-        "title": "Habilidades"
+        "title": "Habilidades",
+        "category": {
+          "languages": "Lenguajes de programación",
+          "frontend": "Frontend",
+          "databases": "Bases de datos",
+          "tools": "Herramientas"
+        },
+        "item": {
+          "typescript": "TypeScript",
+          "javascript": "JavaScript",
+          "csharp": "C#",
+          "cplusplus": "C++",
+          "angular": "Angular",
+          "rxjs": "RxJS",
+          "ngrx": "Ngrx",
+          "scss": "SCSS",
+          "html5": "HTML5",
+          "css3": "CSS3",
+          "mysql": "MySQL",
+          "git": "Git",
+          "jira": "Jira",
+          "docker": "Docker",
+          "postman": "Postman",
+          "kendoui": "Kendo UI",
+          "angularmaterial": "Angular Material",
+          "jest": "Jest",
+          "primeng": "PrimeNG",
+          "bootstrap": "Bootstrap",
+          "jquery": "jQuery",
+          "canva": "Canva",
+          "sqlserver": "SQL Server"
+        }
       },
       "experience": {
         "title": "Experiencia"
