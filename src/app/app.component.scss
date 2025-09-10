@@ -111,6 +111,7 @@
       &.active,
       &:hover {
         color: var(--primary-text-color);
+        
         &::after {
           transform: scaleX(1);
         }
@@ -175,7 +176,7 @@
   gap: 0.75rem;
 
   button {
-    background: none;
+    background: var(--primary-bg-color);
     border: 1px solid var(--border-color);
     color: var(--primary-text-color);
     padding: 8px;
@@ -187,6 +188,11 @@
     width: 38px;
     height: 38px;
     font-size: 1.2rem;
+
+    &:hover {
+      background-color: var(--secondary-bg-color);
+      box-shadow: 0 2px 8px var(--shadow-color);
+    }
   }
 
   .accent-picker {
@@ -322,7 +328,10 @@
 // ----------------------------------------
 .skill-category {
   margin-bottom: 2.5rem;
-  &:last-child { margin-bottom: 0; }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
   h3 {
     margin-bottom: 1.25rem;
     padding-bottom: 0.25rem;
@@ -367,7 +376,8 @@
     z-index: 0;
   }
 
-  i, span {
+  i,
+  span {
     position: relative;
     z-index: 1;
     transition: color 0.35s ease;
@@ -389,7 +399,8 @@
       transform: scaleX(1);
     }
 
-    i, span {
+    i,
+    span {
       color: var(--gray-50);
     }
   }
@@ -448,7 +459,7 @@
 .side-dots-nav {
   position: fixed;
   top: 50%;
-  right: 2rem;
+  right: 0.5rem;
   transform: translateY(-50%);
   z-index: 1000;
 
@@ -504,39 +515,48 @@
 // ----------------------------------------
 // Responsive design
 // ----------------------------------------
-@media (max-width: 992px) {
+@media (max-width: 1400px) {
   .main-container {
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
-  }
+    grid-template-columns: none;
 
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-    border-right: none;
-    border-bottom: 1px solid var(--border-color);
-    padding: 2rem 1rem;
+    .sidebar {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      border-right: none;
+      border-bottom: 1px solid var(--border-color);
+      padding: 2rem 1rem;
 
-    .main-nav ul {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
+      .main-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & > li {
+          & > a,
+          & > a.active {
+            color: var(--primary-text-color);
+
+            &::after {
+              transform: scaleX(0);
+              background-color: transparent;
+            }
+          }
+        }
+      }
     }
-  }
 
-  .main-content {
-    grid-column: 1 / 2;
-  }
-  .ui-controls {
-    top: 1rem;
-    right: 1rem;
-  }
-  .side-dots-nav {
-    display: none;
-  }
-  .content-section {
-    padding: 4rem 1rem;
+    .main-content {
+      grid-column: 1 / 2;
+
+      .ui-controls {
+        top: 1rem;
+        right: 1rem;
+      }
+
+      .side-dots-nav {
+        display: none;
+      }
+    }
   }
 }
