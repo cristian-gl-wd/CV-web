@@ -112,7 +112,7 @@ export const mockPerson: Person = {
       skills: [
         { nameKey: 'angular', iconClass: 'devicon-angularjs-plain' },
         { nameKey: 'kendoui', iconClass: '' },
-        { nameKey: 'angularmaterial', iconClass: 'devicon-angularjs-plain' },
+        { nameKey: 'angularmaterial', iconClass: 'devicon-angularmaterial-plain' },
         { nameKey: 'bootstrap', iconClass: 'devicon-bootstrap-plain' },
         { nameKey: 'rxjs', iconClass: 'devicon-rxjs-plain' },
         { nameKey: 'ngrx', iconClass: 'devicon-redux-original' },
@@ -121,8 +121,7 @@ export const mockPerson: Person = {
         { nameKey: 'css3', iconClass: 'devicon-css3-plain' },
         { nameKey: 'jquery', iconClass: 'devicon-jquery-plain' },
         { nameKey: 'jest', iconClass: 'devicon-jest-plain' },
-        { nameKey: 'primeng', iconClass: 'devicon-primeng-plain' },
-        { nameKey: 'canva', iconClass: 'devicon-canva-original' }
+        { nameKey: 'primeng', iconClass: 'devicon-primeng-plain' }
       ]
     },
     {
