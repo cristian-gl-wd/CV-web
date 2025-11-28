@@ -111,7 +111,7 @@
       &.active,
       &:hover {
         color: var(--primary-text-color);
-        
+
         &::after {
           transform: scaleX(1);
         }
@@ -341,7 +341,7 @@
 // ----------------------------------------
 // Responsive design
 // ----------------------------------------
-@media (max-width: 1400px) {
+@media (max-width: 900px) {
   .main-container {
     grid-template-columns: none;
 
