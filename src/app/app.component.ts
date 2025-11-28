@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CvDataService } from './core/services/cv-data.service';
 import { TranslationService } from './core/services/translation.service';
 import { ThemeService } from './core/services/theme.service';
-import { Person } from './data/profiles.data';
+import { Person } from './core/interfaces/portfolio.model';
 import { ContactComponent } from './features/contact/contact';
 import { ProfileComponent } from './features/profile/profile';
 import { ExperienceComponent } from './features/experience/experience';

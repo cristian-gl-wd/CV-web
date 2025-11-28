@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { Person } from '../../data/profiles.data';
+import { Person } from '../../core/interfaces/portfolio.model';
 
 @Component({
   selector: 'app-projects',

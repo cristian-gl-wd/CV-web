@@ -11,7 +11,7 @@
   },
   "person": {
     "cristian-gl-wd": {
-      "job_title": "Desarrollador frontend",
+      "job_title": "Desarrollador front-end",
       "summary": "Ingeniero de software con más de 6 años de experiencia, apasionado por construir interfaces de usuario intuitivas y eficientes. Durante los últimos 3+ años, me he especializado en el ecosistema Angular, transformando requisitos complejos en aplicaciones web robustas y escalables. Busco activamente un rol desafiante en un entorno internacional. Mi experiencia con C++ y C# me ha proporcionado una sólida base en principios de ingeniería de software y optimización."
     }
   },
@@ -30,7 +30,7 @@
       "name": "Conselleria",
       "study": {
         "daw": {
-          "name": "Grado Superior en Desarrollo de Aplicaciones Web"
+          "name": "Grado superior en Desarrollo de Aplicaciones Web"
         }
       }
     },
@@ -38,7 +38,7 @@
       "name": "La Sénia",
       "study": {
         "smr": {
-          "name": "Grado Medio en Sistemas Microinformáticos y Redes",
+          "name": "Grado medio en Sistemas Microinformáticos y Redes",
           "erasmus": "Incluye una estancia internacional de 6 meses en Tallin, Estonia (Programa Erasmus+)."
         }
       }
@@ -46,7 +46,7 @@
   },
   "job": {
     "frontend_developer": {
-      "title": "Desarrollador frontend",
+      "title": "Desarrollador front-end",
       "description": "Construcción y mantenimiento de aplicaciones Angular centradas en el usuario para el sector logístico, con foco en la escalabilidad y el rendimiento."
     },
     "software_developer": {
@@ -73,7 +73,7 @@
         "title": "Habilidades",
         "category": {
           "languages": "Lenguajes de programación",
-          "frontend": "Frontend",
+          "frontend": "Front-end",
           "databases": "Bases de datos",
           "tools": "Herramientas"
         },

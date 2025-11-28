@@ -1,4 +1,4 @@
-import { Person, Skill } from '../core/interfaces/portfolio.model';
+import { Person } from '../core/interfaces/portfolio.model';
 
 export const mockPerson: Person = {
   name: 'Cristian',
@@ -92,8 +92,8 @@ export const mockPerson: Person = {
         { nameKey: 'typescript', iconClass: 'devicon-typescript-plain' },
         { nameKey: 'scss', iconClass: 'devicon-sass-original' },
       ],
-      repoUrl: 'https://github.com/cristian-gl-wd/portfolio-web',
-      demoUrl: 'https://cristiangarcia.dev',
+      repoUrl: 'https://github.com/cristian-gl-wd/CV-web',
+      demoUrl: 'https://cv.cristian-gl.com',
     },
   ],
   skills: [
@@ -137,7 +137,9 @@ export const mockPerson: Person = {
         { nameKey: 'git', iconClass: 'devicon-git-plain' },
         { nameKey: 'jira', iconClass: 'devicon-jira-plain' },
         { nameKey: 'postman', iconClass: 'devicon-postman-plain' },
-        { nameKey: 'docker', iconClass: 'devicon-docker-plain' }
+        { nameKey: 'docker', iconClass: 'devicon-docker-plain' },
+        { nameKey: 'vscode', iconClass: 'devicon-vscode-plain' },
+        { nameKey: 'proxmox', iconClass: 'devicon-proxmox-plain-wordmark' }
       ]
     }
   ],

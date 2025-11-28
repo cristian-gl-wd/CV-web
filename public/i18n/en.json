@@ -11,7 +11,7 @@
   },
   "person": {
     "cristian-gl-wd": {
-      "job_title": "Frontend developer",
+      "job_title": "Front-end developer",
       "summary": "Software engineer with over 6 years of experience, passionate about building intuitive and efficient user interfaces. For the last 3+ years, I have specialized in the Angular ecosystem, transforming complex requirements into robust and scalable web applications. Actively seeking a challenging role in an international environment. My experience with C++ and C# has provided me with a solid foundation in software engineering and optimization principles."
     }
   },
@@ -30,7 +30,7 @@
       "name": "IES Conselleria",
       "study": {
         "daw": {
-          "name": "Higher National Diploma in Web Application Development"
+          "name": "Higher national diploma in Web Application Development"
         }
       }
     },
@@ -38,23 +38,23 @@
       "name": "IES La Senia",
       "study": {
         "smr": {
-          "name": "Higher National Diploma in Microcomputer Systems and Networks",
-          "erasmus": "Includes a 6-month international internship in Tallinn, Estonia (Erasmus+ Programme)."
+          "name": "Higher national diploma in Microcomputer Systems and Networks",
+          "erasmus": "Includes a 6-month international internship in Tallinn, Estonia (Erasmus+ programme)."
         }
       }
     }
   },
   "job": {
     "frontend_developer": {
-      "title": "Frontend Developer",
+      "title": "Front-end developer",
       "description": "Building and maintaining user-centric Angular applications for the logistics sector, with a focus on scalability and performance."
     },
     "software_developer": {
-      "title": "Software Developer",
+      "title": "Software developer",
       "description": "Designing and maintaining critical backend solutions in C++ and developing C# desktop applications to optimize internal business processes."
     },
     "web_developer": {
-      "title": "Web Developer",
+      "title": "Web developer",
       "description": "Led the complete technical overhaul of the company's main web application, refactoring legacy PHP to a modern stack (JavaScript, HTML5, CSS3), significantly improving load times and user experience."
     }
   },
@@ -73,7 +73,7 @@
         "title": "Skills",
         "category": {
           "languages": "Programming languages",
-          "frontend": "Frontend",
+          "frontend": "Front-end",
           "databases": "Databases",
           "tools": "Tools"
         },
@@ -99,6 +99,8 @@
           "primeng": "PrimeNG",
           "bootstrap": "Bootstrap",
           "jquery": "jQuery",
+          "proxmox": "Proxmox",
+          "vscode": "VS Code",
           "canva": "Canva",
           "sqlserver": "SQL Server"
         }
