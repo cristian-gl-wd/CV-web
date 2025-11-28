@@ -5,12 +5,12 @@ import { CvDataService } from './core/services/cv-data.service';
 import { TranslationService } from './core/services/translation.service';
 import { ThemeService } from './core/services/theme.service';
 import { Person } from './core/interfaces/portfolio.model';
-import { ContactComponent } from './features/contact/contact';
-import { ProfileComponent } from './features/profile/profile';
-import { ExperienceComponent } from './features/experience/experience';
-import { SkillsComponent } from './features/skills/skills';
-import { ProjectsComponent } from './features/projects/projects';
-import { EducationComponent } from './features/education/education';
+import { ContactComponent } from './features/contact/contact.component';
+import { ProfileComponent } from './features/profile/profile.component';
+import { ExperienceComponent } from './features/experience/experience.component';
+import { SkillsComponent } from './features/skills/skills.component';
+import { ProjectsComponent } from './features/projects/projects.component';
+import { EducationComponent } from './features/education/education.component';
 
 @Component({
   selector: 'app-root',

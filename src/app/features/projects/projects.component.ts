@@ -7,8 +7,8 @@ import { Person } from '../../core/interfaces/portfolio.model';
   selector: 'app-projects',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  templateUrl: './projects.html',
-  styleUrl: './projects.scss'
+  templateUrl: './projects.component.html',
+  styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
   @Input() person!: Person;

@@ -7,8 +7,8 @@ import { Person } from '../../core/interfaces/portfolio.model';
   selector: 'app-education',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  templateUrl: './education.html',
-  styleUrl: './education.scss'
+  templateUrl: './education.component.html',
+  styleUrl: './education.component.scss'
 })
 export class EducationComponent {
   @Input() person!: Person;

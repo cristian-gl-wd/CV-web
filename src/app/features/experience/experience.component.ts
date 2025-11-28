@@ -7,8 +7,8 @@ import { Person } from '../../core/interfaces/portfolio.model';
   selector: 'app-experience',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  templateUrl: './experience.html',
-  styleUrl: './experience.scss'
+  templateUrl: './experience.component.html',
+  styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent implements AfterViewInit, OnDestroy {
   @Input() person!: Person;

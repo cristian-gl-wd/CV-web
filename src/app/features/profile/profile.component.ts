@@ -6,8 +6,8 @@ import { Person } from '../../core/interfaces/portfolio.model';
   selector: 'app-profile',
   standalone: true,
   imports: [TranslateModule],
-  templateUrl: './profile.html',
-  styleUrl: './profile.scss'
+  templateUrl: './profile.component.html',
+  styleUrl: './profile.component.scss'
 })
 export class ProfileComponent {
   @Input() person!: Person;

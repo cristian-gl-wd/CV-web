@@ -7,8 +7,8 @@ import { Person } from '../../core/interfaces/portfolio.model';
   selector: 'app-skills',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  templateUrl: './skills.html',
-  styleUrl: './skills.scss'
+  templateUrl: './skills.component.html',
+  styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
   @Input() person!: Person;
