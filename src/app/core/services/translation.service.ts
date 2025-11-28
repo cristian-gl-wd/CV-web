@@ -10,7 +10,7 @@ export class TranslationService {
   private translations = signal<any>({});
 
   constructor(private http: HttpClient) {
-    const savedLang = localStorage.getItem('appLanguage') || 'es';
+    const savedLang = localStorage.getItem('appLanguage') || 'en';
     this.setLanguage(savedLang);
   }
 

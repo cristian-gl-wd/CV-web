@@ -1,8 +1,11 @@
-export type SkillLevelKey = 'advanced' | 'proficient' | 'intermediate';
-
 export interface Skill {
-  name: string;
-  levelKey: SkillLevelKey;
+  nameKey: string;
+  iconClass: string;
+}
+
+export interface SkillCategory {
+  titleKey: string;
+  skills: Skill[];
 }
 
 export interface Period {
@@ -61,5 +64,5 @@ export interface Person {
   experience: Company[];
   education: EducationCenter[];
   projects: Project[];
-  skills: Skill[];
+  skills: SkillCategory[];
 }

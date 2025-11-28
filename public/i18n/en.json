@@ -58,11 +58,6 @@
       "description": "Led the complete technical overhaul of the company's main web application, refactoring legacy PHP to a modern stack (JavaScript, HTML5, CSS3), significantly improving load times and user experience."
     }
   },
-  "skill_levels": {
-    "advanced": "Advanced",
-    "proficient": "Proficient",
-    "intermediate": "Intermediate"
-  },
   "web_content": {
     "section": {
       "profile": {
@@ -75,7 +70,38 @@
         "title": "Education"
       },
       "skills": {
-        "title": "Skills"
+        "title": "Skills",
+        "category": {
+          "languages": "Programming languages",
+          "frontend": "Frontend",
+          "databases": "Databases",
+          "tools": "Tools"
+        },
+        "item": {
+          "typescript": "TypeScript",
+          "javascript": "JavaScript",
+          "csharp": "C#",
+          "cplusplus": "C++",
+          "angular": "Angular",
+          "rxjs": "RxJS",
+          "ngrx": "Ngrx",
+          "scss": "SCSS",
+          "html5": "HTML5",
+          "css3": "CSS3",
+          "mysql": "MySQL",
+          "git": "Git",
+          "jira": "Jira",
+          "docker": "Docker",
+          "postman": "Postman",
+          "kendoui": "Kendo UI",
+          "angularmaterial": "Angular Material",
+          "jest": "Jest",
+          "primeng": "PrimeNG",
+          "bootstrap": "Bootstrap",
+          "jquery": "jQuery",
+          "canva": "Canva",
+          "sqlserver": "SQL Server"
+        }
       },
       "experience": {
         "title": "Experience"
