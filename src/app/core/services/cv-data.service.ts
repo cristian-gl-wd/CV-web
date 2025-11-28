@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
-import { mockPerson } from '../../data/mock-portfolio';
+import { Observable, of } from 'rxjs';
 import { Person } from '../interfaces/portfolio.model';
-import { of, Observable } from 'rxjs';
+import { PROFILES } from '../../data/profiles.data';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class CvDataService {
-  getPersonData(): Observable<Person> {
-    return of(mockPerson);
+
+  constructor() { }
+
+  getPerson(profileId: string = 'cristian-gl-wd'): Observable<Person | undefined> {
+    return of(PROFILES[profileId]);
   }
 }

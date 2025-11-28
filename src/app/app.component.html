@@ -2,65 +2,52 @@
 <div class="main-container">
   <aside class="sidebar">
     <div class="sidebar-content">
-      <img
-        [src]="`images/${person.profilePictureUrl}.png`"
-        alt="Profile picture"
-        class="profile-picture"
-      />
+      <img [src]="`images/${person.profilePictureUrl}.png`" alt="Profile picture" class="profile-picture" />
       <h1>{{ person.name }} {{ person.surname }}</h1>
-      <h2>{{ t(`person.${person.personKey}.job_title`) }}</h2>
+      <h2>{{ 'person.' + person.personKey + '.job_title' | translate }}</h2>
 
-      <a
-        [href]="`docs/pdf/${person.cvUrl}.pdf`"
-        [download]="`${person.cvUrl}.pdf`"
-        class="download-cv-btn"
-      >
-        {{ t('web_content.buttons.download_cv.label') }}
+      <a [href]="`docs/pdf/${person.cvUrl}.pdf`" [download]="`${person.cvUrl}.pdf`" class="download-cv-btn">
+        {{ 'web_content.buttons.download_cv.label' | translate }}
       </a>
 
       <nav class="main-nav">
         <ul>
           <li>
             <a href="#profile" [class.active]="activeSection() === 'profile'">{{
-              t('web_content.section.profile.title')
-            }}</a>
+              'web_content.section.profile.title' | translate
+              }}</a>
           </li>
           <li>
             <a href="#experience" [class.active]="activeSection() === 'experience'">{{
-              t('web_content.section.experience.title')
-            }}</a>
+              'web_content.section.experience.title' | translate
+              }}</a>
           </li>
           <li>
             <a href="#skills" [class.active]="activeSection() === 'skills'">{{
-              t('web_content.section.skills.title')
-            }}</a>
+              'web_content.section.skills.title' | translate
+              }}</a>
           </li>
           <li>
             <a href="#projects" [class.active]="activeSection() === 'projects'">{{
-              t('web_content.section.projects.title')
-            }}</a>
+              'web_content.section.projects.title' | translate
+              }}</a>
           </li>
           <li>
             <a href="#education" [class.active]="activeSection() === 'education'">{{
-              t('web_content.section.education.title')
-            }}</a>
+              'web_content.section.education.title' | translate
+              }}</a>
+          </li>
+          <li>
+            <a href="#contact" [class.active]="activeSection() === 'contact'">{{
+              'web_content.section.contact.title' | translate
+              }}</a>
           </li>
         </ul>
       </nav>
 
       <div class="social-links">
-        <a
-          href="https://linkedin.com/in/{{ person.personKey }}"
-          target="_blank"
-          rel="noopener noreferrer"
-          >LinkedIn</a
-        >
-        <a
-          href="https://github.com/{{ person.personKey }}"
-          target="_blank"
-          rel="noopener noreferrer"
-          >GitHub</a
-        >
+        <a href="https://linkedin.com/in/{{ person.personKey }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/{{ person.personKey }}" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
   </aside>
@@ -68,17 +55,13 @@
   <main class="main-content">
     <div class="ui-controls">
       <div class="language-switcher">
-        <a (click)="changeLanguage('es')" [class.active]="translationService.currentLang() === 'es'"
-          >es</a
-        >
+        <a (click)="changeLanguage('es')" [class.active]="translationService.currentLang() === 'es'">es</a>
         <span>|</span>
-        <a (click)="changeLanguage('en')" [class.active]="translationService.currentLang() === 'en'"
-          >en</a
-        >
+        <a (click)="changeLanguage('en')" [class.active]="translationService.currentLang() === 'en'">en</a>
       </div>
 
       <div class="theme-switcher">
-        <button (click)="themeService.toggleTheme()" [title]="t('buttons.toggle_theme')">
+        <button (click)="themeService.toggleTheme()" [title]="'buttons.toggle_theme' | translate">
           @if (themeService.theme() === 'light') {
           <span><i class="fa-solid fa-moon"></i></span>
           } @else {
@@ -96,43 +79,33 @@
     <nav class="side-dots-nav">
       <ul>
         <li>
-          <a
-            href="#profile"
-            [attr.data-tooltip]="t('web_content.section.profile.title')"
-            [class.active]="activeSection() === 'profile'"
-          >
+          <a href="#profile" [attr.data-tooltip]="'web_content.section.profile.title' | translate"
+            [class.active]="activeSection() === 'profile'">
           </a>
         </li>
         <li>
-          <a
-            href="#experience"
-            [attr.data-tooltip]="t('web_content.section.experience.title')"
-            [class.active]="activeSection() === 'experience'"
-          >
+          <a href="#experience" [attr.data-tooltip]="'web_content.section.experience.title' | translate"
+            [class.active]="activeSection() === 'experience'">
           </a>
         </li>
         <li>
-          <a
-            href="#skills"
-            [attr.data-tooltip]="t('web_content.section.skills.title')"
-            [class.active]="activeSection() === 'skills'"
-          >
+          <a href="#skills" [attr.data-tooltip]="'web_content.section.skills.title' | translate"
+            [class.active]="activeSection() === 'skills'">
           </a>
         </li>
         <li>
-          <a
-            href="#projects"
-            [attr.data-tooltip]="t('web_content.section.projects.title')"
-            [class.active]="activeSection() === 'projects'"
-          >
+          <a href="#projects" [attr.data-tooltip]="'web_content.section.projects.title' | translate"
+            [class.active]="activeSection() === 'projects'">
           </a>
         </li>
         <li>
-          <a
-            href="#education"
-            [attr.data-tooltip]="t('web_content.section.education.title')"
-            [class.active]="activeSection() === 'education'"
-          >
+          <a href="#education" [attr.data-tooltip]="'web_content.section.education.title' | translate"
+            [class.active]="activeSection() === 'education'">
+          </a>
+        </li>
+        <li>
+          <a href="#contact" [attr.data-tooltip]="'web_content.section.contact.title' | translate"
+            [class.active]="activeSection() === 'contact'">
           </a>
         </li>
       </ul>
@@ -140,8 +113,8 @@
 
     <section id="profile" #section class="content-section">
       <div class="section-content">
-        <h2>{{ t('web_content.section.profile.title') }}</h2>
-        <p>{{ t('person.' + person.personKey + '.summary') }}</p>
+        <h2>{{ 'web_content.section.profile.title' | translate }}</h2>
+        <app-profile [person]="person"></app-profile>
       </div>
       <a href="#experience" class="scroll-down-arrow">
         <i class="fa-solid fa-chevron-down"></i>
@@ -150,29 +123,8 @@
 
     <section id="experience" #section class="content-section">
       <div class="section-content">
-        <h2>{{ t('web_content.section.experience.title') }}</h2>
-        <div class="timeline">
-          @for (company of person.experience; track company.id) { @for (job of company.jobs; track
-          job.id) {
-          <div class="timeline-item fade-in" #timelineItem>
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>
-                {{ t('job.' + job.jobKey + '.title') }} |
-                {{ t('company.' + company.companyKey + '.name') }}
-              </h3>
-              <span class="timeline-period"
-                >{{ job.period.start | date : 'MMMM yyyy' }} - @if (job.isCurrent) {
-                {{ t('common.time.present') }}
-                } @else {
-                {{ job.period.end | date : 'MMMM yyyy' }}
-                }
-              </span>
-              <p>{{ t('job.' + job.jobKey + '.description') }}</p>
-            </div>
-          </div>
-          } }
-        </div>
+        <h2>{{ 'web_content.section.experience.title' | translate }}</h2>
+        <app-experience [person]="person"></app-experience>
       </div>
       <a href="#skills" class="scroll-down-arrow">
         <i class="fa-solid fa-chevron-down"></i>
@@ -181,25 +133,8 @@
 
     <section id="skills" #section class="content-section">
       <div class="section-content">
-        <h2>{{ t('web_content.section.skills.title') }}</h2>
-
-        @for (category of person.skills; track category.titleKey) { @if (category.skills.length > 0)
-        {
-        <div class="skill-category">
-          <h3>{{ t('web_content.section.skills.category.' + category.titleKey) }}</h3>
-          <div class="skills-grid">
-            @for (skill of category.skills; track skill.nameKey) {
-            <div class="skill-item">
-              @if (skill.iconClass) {
-              <i [ngClass]="skill.iconClass"></i>
-              } @else {
-              <span>{{ t('web_content.section.skills.item.' + skill.nameKey) }}</span>
-            }
-            </div>
-            }
-          </div>
-        </div>
-        } }
+        <h2>{{ 'web_content.section.skills.title' | translate }}</h2>
+        <app-skills [person]="person"></app-skills>
       </div>
       <a href="#projects" class="scroll-down-arrow">
         <i class="fa-solid fa-chevron-down"></i>
@@ -208,29 +143,8 @@
 
     <section id="projects" #section class="content-section">
       <div class="section-content">
-        <h2>{{ t('web_content.section.projects.title') }}</h2>
-        <div class="projects-grid">
-          @for (project of person.projects; track project.id) {
-          <div class="project-card">
-            <h3>{{ project.name }}</h3>
-            <p>{{ project.description }}</p>
-            <div class="tech-stack">
-              <strong>{{ t('web_content.section.skills.title') }}:</strong>
-            </div>
-            <div class="project-links">
-              @if(project.repoUrl) {
-              <a [href]="project.repoUrl" target="_blank">{{
-                t('web_content.buttons.repository.label')
-              }}</a>
-              } @if(project.demoUrl) {
-              <a [href]="project.demoUrl" target="_blank">{{
-                t('web_content.buttons.demo.label')
-              }}</a>
-              }
-            </div>
-          </div>
-          }
-        </div>
+        <h2>{{ 'web_content.section.projects.title' | translate }}</h2>
+        <app-projects [person]="person"></app-projects>
       </div>
       <a href="#education" class="scroll-down-arrow">
         <i class="fa-solid fa-chevron-down"></i>
@@ -239,32 +153,18 @@
 
     <section id="education" #section class="content-section">
       <div class="section-content">
-        <h2>{{ t('web_content.section.education.title') }}</h2>
-        <div class="education-list">
-          @for (center of person.education; track center.id) { @for (degree of center.degrees; track
-          degree.id) {
-          <div class="education-item">
-            <h3>
-              {{
-                t('academic_center.' + center.academyKey + '.study.' + degree.studyKey + '.name')
-              }}
-            </h3>
-            <p class="institution">
-              {{ t('academic_center.' + center.academyKey + '.name') }} |
-              {{ degree.period.start | date : 'yyyy' }} - {{ degree.period.end | date : 'yyyy' }}
-            </p>
-            @if (t('academic_center.' + center.academyKey + '.study.' + degree.studyKey +
-            '.erasmus') !== 'academic_center.' + center.academyKey + '.study.' + degree.studyKey +
-            '.erasmus') {
-            <p class="note">
-              {{
-                t('academic_center.' + center.academyKey + '.study.' + degree.studyKey + '.erasmus')
-              }}
-            </p>
-            }
-          </div>
-          } }
-        </div>
+        <h2>{{ 'web_content.section.education.title' | translate }}</h2>
+        <app-education [person]="person"></app-education>
+      </div>
+      <a href="#contact" class="scroll-down-arrow">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <section id="contact" #section class="content-section">
+      <div class="section-content">
+        <h2>{{ 'web_content.section.contact.title' | translate }}</h2>
+        <app-contact></app-contact>
       </div>
     </section>
   </main>

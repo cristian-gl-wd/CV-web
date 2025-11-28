@@ -1,0 +1,17 @@
+@for (category of person.skills; track category.titleKey) { @if (category.skills.length > 0)
+{
+<div class="skill-category">
+    <h3>{{ 'web_content.section.skills.category.' + category.titleKey | translate }}</h3>
+    <div class="skills-grid">
+        @for (skill of category.skills; track skill.nameKey) {
+        <div class="skill-item">
+            @if (skill.iconClass) {
+            <i [ngClass]="skill.iconClass"></i>
+            } @else {
+            <span>{{ 'web_content.section.skills.item.' + skill.nameKey | translate }}</span>
+            }
+        </div>
+        }
+    </div>
+</div>
+} }

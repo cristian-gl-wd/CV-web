@@ -1,0 +1,70 @@
+<div class="contact-container">
+    <p class="contact-intro">{{ 'web_content.section.contact.intro' | translate }}</p>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+        <div class="form-group">
+            <label for="name">{{ 'web_content.section.contact.form.name' | translate }}</label>
+            <input type="text" id="name" formControlName="name"
+                [class.error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+            @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
+            <span class="error-message">{{ 'web_content.section.contact.validation.required' | translate
+                }}</span>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="email">{{ 'web_content.section.contact.form.email' | translate }}</label>
+            <input type="email" id="email" formControlName="email"
+                [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+            @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+            @if (contactForm.get('email')?.errors?.['required']) {
+            <span class="error-message">{{ 'web_content.section.contact.validation.required' | translate
+                }}</span>
+            }
+            @if (contactForm.get('email')?.errors?.['email']) {
+            <span class="error-message">{{ 'web_content.section.contact.validation.email' | translate }}</span>
+            }
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="subject">{{ 'web_content.section.contact.form.subject' | translate }}</label>
+            <input type="text" id="subject" formControlName="subject"
+                [class.error]="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">
+            @if (contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched) {
+            <span class="error-message">{{ 'web_content.section.contact.validation.required' | translate
+                }}</span>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="message">{{ 'web_content.section.contact.form.message' | translate }}</label>
+            <textarea id="message" formControlName="message" rows="5"
+                [class.error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"></textarea>
+            @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
+            @if (contactForm.get('message')?.errors?.['required']) {
+            <span class="error-message">{{ 'web_content.section.contact.validation.required' | translate
+                }}</span>
+            }
+            @if (contactForm.get('message')?.errors?.['minlength']) {
+            <span class="error-message">{{ 'web_content.section.contact.validation.minlength' | translate
+                }}</span>
+            }
+            }
+        </div>
+
+        <button type="submit" class="submit-btn" [disabled]="contactForm.invalid || isSubmitting">
+            @if (isSubmitting) {
+            <i class="fas fa-spinner fa-spin"></i> {{ 'web_content.buttons.sending.label' | translate }}
+            } @else {
+            {{ 'web_content.buttons.send.label' | translate }}
+            }
+        </button>
+
+        @if (submitSuccess) {
+        <div class="success-message">
+            <i class="fas fa-check-circle"></i> {{ 'web_content.section.contact.success' | translate }}
+        </div>
+        }
+    </form>
+</div>

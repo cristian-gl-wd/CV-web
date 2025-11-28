@@ -1,26 +1,35 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideHttpClient } from '@angular/common/http';
+import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader, TRANSLATE_HTTP_LOADER_CONFIG } from '@ngx-translate/http-loader';
+import { Observable } from 'rxjs';
+
+import { routes } from './app.routes';
+
+export class CustomTranslateLoader implements TranslateLoader {
+  constructor(private http: HttpClient) { }
+  getTranslation(lang: string): Observable<any> {
+    return this.http.get(`./i18n/${lang}.json`);
+  }
+}
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new CustomTranslateLoader(http);
+}
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
     provideHttpClient(),
-
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
-          useClass: TranslateHttpLoader,
-        },
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+        }
       })
-    ),
-    {
-      provide: TRANSLATE_HTTP_LOADER_CONFIG,
-      useValue: {
-        prefix: './i18n/',
-        suffix: '.json',
-      },
-    },
-  ],
+    )
+  ]
 };

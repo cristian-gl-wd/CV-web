@@ -1,39 +1,40 @@
-import {
-  Component,
-  AfterViewInit,
-  ElementRef,
-  ViewChildren,
-  QueryList,
-  Inject,
-  PLATFORM_ID,
-  signal,
-  OnInit,
-} from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, signal, inject, ViewChildren, QueryList, ElementRef, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { CvDataService } from './core/services/cv-data.service';
 import { TranslationService } from './core/services/translation.service';
 import { ThemeService } from './core/services/theme.service';
-
-import { CvDataService } from './core/services/cv-data.service';
-import { Person, Skill } from './core/interfaces/portfolio.model';
+import { Person } from './data/profiles.data';
+import { ContactComponent } from './features/contact/contact';
+import { ProfileComponent } from './features/profile/profile';
+import { ExperienceComponent } from './features/experience/experience';
+import { SkillsComponent } from './features/skills/skills';
+import { ProjectsComponent } from './features/projects/projects';
+import { EducationComponent } from './features/education/education';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    TranslateModule,
+    ContactComponent,
+    ProfileComponent,
+    ExperienceComponent,
+    SkillsComponent,
+    ProjectsComponent,
+    EducationComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [TranslationService, ThemeService, CvDataService],
+  styleUrl: './app.component.scss',
 })
-export class AppComponent implements AfterViewInit, OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   activeSection = signal<string>('profile');
   @ViewChildren('section') sections!: QueryList<ElementRef>;
-  @ViewChildren('timelineItem') timelineItems!: QueryList<ElementRef>;
 
   person: Person | undefined;
 
   private sectionObserver!: IntersectionObserver;
-  private animationObserver!: IntersectionObserver;
 
   constructor(
     public translationService: TranslationService,
@@ -43,7 +44,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.cvDataService.getPersonData().subscribe((data) => {
+    this.cvDataService.getPerson('cristian-gl-wd').subscribe((data) => {
       this.person = data;
     });
   }
@@ -52,7 +53,6 @@ export class AppComponent implements AfterViewInit, OnInit {
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
         this.initSectionObserver();
-        this.initAnimationObserver();
       }, 0);
     }
   }
@@ -68,21 +68,6 @@ export class AppComponent implements AfterViewInit, OnInit {
     }, options);
     this.sections.forEach((section) => {
       this.sectionObserver.observe(section.nativeElement);
-    });
-  }
-
-  private initAnimationObserver(): void {
-    const options = { root: null, threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-    this.animationObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-    this.timelineItems.forEach((item) => {
-      this.animationObserver.observe(item.nativeElement);
     });
   }
 

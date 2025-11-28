@@ -1,0 +1,24 @@
+<div class="education-list">
+    @for (center of person.education; track center.id) { @for (degree of center.degrees; track
+    degree.id) {
+    <div class="education-item">
+        <h3>
+            {{
+            'academic_center.' + center.academyKey + '.study.' + degree.studyKey + '.name' | translate
+            }}
+        </h3>
+        <p class="institution">
+            {{ 'academic_center.' + center.academyKey + '.name' | translate }} |
+            {{ degree.period.start | date : 'yyyy' }} - {{ degree.period.end | date : 'yyyy' }}
+        </p>
+        @if (('academic_center.' + center.academyKey + '.study.' + degree.studyKey + '.erasmus' | translate) !==
+        'academic_center.' + center.academyKey + '.study.' + degree.studyKey + '.erasmus') {
+        <p class="note">
+            {{
+            'academic_center.' + center.academyKey + '.study.' + degree.studyKey + '.erasmus' | translate
+            }}
+        </p>
+        }
+    </div>
+    } }
+</div>

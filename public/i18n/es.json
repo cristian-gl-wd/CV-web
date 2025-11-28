@@ -105,6 +105,22 @@
       },
       "experience": {
         "title": "Experiencia"
+      },
+      "contact": {
+        "title": "Contáctame",
+        "intro": "¡No dudes en contactarme si tienes alguna pregunta o simplemente quieres saludar!",
+        "form": {
+          "name": "Nombre",
+          "email": "Correo electrónico",
+          "subject": "Asunto",
+          "message": "Mensaje"
+        },
+        "validation": {
+          "required": "Este campo es obligatorio",
+          "email": "Por favor, introduce un correo válido",
+          "minlength": "El mensaje debe tener al menos 10 caracteres"
+        },
+        "success": "¡Mensaje enviado con éxito!"
       }
     },
     "buttons": {
@@ -116,6 +132,13 @@
       },
       "demo": {
         "label": "Demo"
+      },
+      "toggle_theme": "Cambiar tema",
+      "send": {
+        "label": "Enviar"
+      },
+      "sending": {
+        "label": "Enviando..."
       }
     }
   },

@@ -1,0 +1,21 @@
+<div class="timeline">
+    @for (company of person.experience; track company.id) { @for (job of company.jobs; track
+    job.id) {
+    <div class="timeline-item fade-in" #timelineItem>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>
+                {{ 'job.' + job.jobKey + '.title' | translate }} |
+                {{ 'company.' + company.companyKey + '.name' | translate }}
+            </h3>
+            <span class="timeline-period">{{ job.period.start | date : 'MMMM yyyy' }} - @if (job.isCurrent) {
+                {{ 'common.time.present' | translate }}
+                } @else {
+                {{ job.period.end | date : 'MMMM yyyy' }}
+                }
+            </span>
+            <p>{{ 'job.' + job.jobKey + '.description' | translate }}</p>
+        </div>
+    </div>
+    } }
+</div>

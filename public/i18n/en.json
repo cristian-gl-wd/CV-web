@@ -105,6 +105,22 @@
       },
       "experience": {
         "title": "Experience"
+      },
+      "contact": {
+        "title": "Contact me",
+        "intro": "Feel free to reach out if you have any questions or just want to say hi!",
+        "form": {
+          "name": "Name",
+          "email": "Email",
+          "subject": "Subject",
+          "message": "Message"
+        },
+        "validation": {
+          "required": "This field is required",
+          "email": "Please enter a valid email",
+          "minlength": "Message must be at least 10 characters long"
+        },
+        "success": "Message sent successfully!"
       }
     },
     "buttons": {
@@ -116,6 +132,13 @@
       },
       "demo": {
         "label": "Demo"
+      },
+      "toggle_theme": "Toggle theme",
+      "send": {
+        "label": "Send"
+      },
+      "sending": {
+        "label": "Sending..."
       }
     }
   },

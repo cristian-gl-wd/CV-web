@@ -1,0 +1,42 @@
+@use '../../app.component.scss' as app;
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid var(--border-color);
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -39px;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: var(--primary-bg-color);
+      border: 3px solid var(--accent-color);
+    }
+
+    .timeline-content {
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem;
+      }
+      .timeline-period {
+        color: var(--secondary-text-color);
+        font-size: 0.9rem;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        line-height: 1.6;
+      }
+    }
+  }
+}
